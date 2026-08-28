@@ -20,19 +20,26 @@ export default function Navbar() {
               href="#about"
               className="hover:text-emerald-500 transition-colors"
             >
-              About
+              About & Skills
             </Link>
             <Link
-              href="#skills"
+              href="#services"
               className="hover:text-emerald-500 transition-colors"
             >
-              Skills
+              Services
             </Link>
             <Link
               href="#projects"
               className="hover:text-emerald-500 transition-colors"
             >
               Projects
+            </Link>
+            {/* Added the Contact Link right here! */}
+            <Link
+              href="#contact"
+              className="hover:text-emerald-500 transition-colors"
+            >
+              Contact
             </Link>
           </nav>
 

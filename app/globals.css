@@ -1,10 +1,8 @@
 @import "tailwindcss";
 
-/* Tells Tailwind v4 to trigger dark mode when the .dark class is present */
 @custom-variant dark (&:is(.dark *));
 
 @layer base {
-  /* You can remove the body background colors from here since we moved them to layout.js */
   h1,
   h2,
   h3,
@@ -12,5 +10,78 @@
   h5,
   h6 {
     @apply text-slate-900 dark:text-slate-100 font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .bg-grid-slate-900 {
+    background-image:
+      linear-gradient(to right, rgb(15 23 42 / 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(15 23 42 / 0.1) 1px, transparent 1px);
+  }
+
+  .dark .bg-grid-white {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  }
+
+  .bg-grid {
+    background-size: 40px 40px;
+  }
+
+  .mask-radial-faded {
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+    -webkit-mask-image: radial-gradient(
+      circle at center,
+      black,
+      transparent 80%
+    );
+  }
+
+  /* --- NEW TRACER CLASSES --- */
+  .tracer-h {
+    @apply absolute h-[1px] w-1/3 bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent opacity-0;
+    animation: tracer-horizontal linear infinite;
+  }
+
+  .tracer-v {
+    @apply absolute w-[1px] h-1/3 bg-gradient-to-b from-transparent via-emerald-500/50 to-transparent opacity-0;
+    animation: tracer-vertical linear infinite;
+  }
+}
+
+/* --- NEW TRACER KEYFRAMES --- */
+@keyframes tracer-horizontal {
+  0% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+@keyframes tracer-vertical {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
   }
 }
