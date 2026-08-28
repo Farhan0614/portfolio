@@ -58,24 +58,39 @@ export default function About() {
             <div className="w-20 h-1 bg-emerald-500 rounded-full"></div>
           </motion.div>
 
-          <motion.p
+          <motion.div
             variants={childVariants}
-            className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg"
+            className="space-y-4 text-lg text-slate-600 dark:text-slate-400 leading-relaxed"
           >
-            Based in {personalInfo.location}, I am a Software Engineer who
-            thrives on solving complex architectural problems.
-          </motion.p>
-
-          <motion.p
+            <p>
+              I am a Full-Stack Software Engineer who thrives on breaking down
+              complex technical challenges into clean, scalable web
+              applications. My expertise lies in architecting decoupled systems
+              using Next.js and Node.js that are built to perform.
+            </p>
+          </motion.div>
+          <motion.div
             variants={childVariants}
-            className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg"
+            className="space-y-4 text-lg text-slate-600 dark:text-slate-400 leading-relaxed"
           >
-            My engineering philosophy centers around **Software Quality
-            Engineering**. Whether I am writing strict JUnit tests, applying
-            Boundary Value Analysis, or building a decoupled Next.js & Express
-            architecture, I believe in writing code that is not just functional,
-            but scalable and maintainable.
-          </motion.p>
+            <p>
+              My engineering philosophy goes beyond just making things work. I
+              am deeply passionate about **Software Quality
+              Engineering**—prioritizing robust architecture, strict testing
+              methodologies, and maintainable code from day one.
+            </p>
+          </motion.div>
+          <motion.div
+            variants={childVariants}
+            className="space-y-4 text-lg text-slate-600 dark:text-slate-400 leading-relaxed"
+          >
+            <p>
+              Technology moves fast, so continuous learning is baked into my
+              daily routine. Ultimately, I believe great software isn't just
+              about writing logic; it requires clear communication, seamless
+              collaboration, and a focus on delivering real user value.
+            </p>
+          </motion.div>
         </div>
 
         {/* RIGHT SIDE: The Skills Matrix */}

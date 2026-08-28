@@ -4,8 +4,8 @@ export const personalInfo = {
   location: "Sahiwal, Punjab, Pakistan",
   bio: "I architect and build scalable, decoupled web applications. With a strong focus on system resilience, advanced data integrations, and clean code, I transform complex technical challenges into robust, production-ready solutions.",
   github: "https://github.com/Farhan0614",
-  linkedin: "https://linkedin.com/in/yourusername",
-  email: "your.email@example.com",
+  linkedin: "https://linkedin.com/in/muhammad-farhan-web-dev",
+  email: "farhanmirza0614@gmail.com",
 };
 
 export const skills = {

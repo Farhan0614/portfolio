@@ -61,7 +61,10 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center px-6 md:px-12 lg:px-24 max-w-7xl mx-auto w-full pt-20 lg:pt-0">
+    <section
+      id="hero"
+      className="relative min-h-[90vh] flex items-center justify-center px-6 md:px-12 lg:px-24 max-w-7xl mx-auto w-full pt-20 lg:pt-0"
+    >
       {/* FLASHY BACKGROUND GLOW */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] opacity-30 dark:opacity-20 pointer-events-none -z-10 blur-[100px] bg-gradient-to-b from-emerald-500/40 to-transparent"></div>
 
@@ -147,7 +150,7 @@ export default function Hero() {
 
           <div className="relative w-full h-full rounded-2xl overflow-hidden border border-slate-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-2xl">
             <Image
-              src="/img/profile.jpg"
+              src="/img/profile2.jpg"
               alt={personalInfo.name}
               fill
               priority

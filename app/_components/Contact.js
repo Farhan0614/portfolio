@@ -1,10 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin } from "lucide-react";
+import { Send, Mail, MapPin, Loader2, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
 import { personalInfo } from "../_data/portfolioData";
+import { sendEmail } from "../_actions/sendEmail";
 
 export default function Contact() {
+  const [status, setStatus] = useState("idle"); // 'idle', 'loading', 'success', 'error'
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
@@ -14,6 +18,29 @@ export default function Contact() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
+
+  // Our custom submit handler
+  // Our custom submit handler
+  async function handleAction(formData) {
+    setStatus("loading");
+
+    // We run the email function AND a forced 1-second delay at the same time
+    const [result] = await Promise.all([
+      sendEmail(formData),
+      new Promise((resolve) => setTimeout(resolve, 1000)), // Force a 1-second wait
+    ]);
+
+    if (result?.error) {
+      setStatus("error");
+      alert(result.error);
+    } else {
+      setStatus("success");
+      document.getElementById("contact-form").reset();
+
+      // Reset the button after 3 seconds
+      setTimeout(() => setStatus("idle"), 3000);
+    }
+  }
 
   return (
     <section
@@ -27,7 +54,6 @@ export default function Contact() {
         viewport={{ once: true, amount: 0.2 }}
         className="bg-white dark:bg-neutral-900 rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-neutral-800 shadow-2xl shadow-slate-200/50 dark:shadow-none relative overflow-hidden"
       >
-        {/* Decorative background accent */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] -z-10"></div>
 
         <div className="flex flex-col md:flex-row gap-12 relative z-10">
@@ -69,6 +95,8 @@ export default function Contact() {
 
           {/* RIGHT SIDE: The Form */}
           <motion.form
+            id="contact-form"
+            action={handleAction} // We pass our Server Action here!
             variants={itemVariants}
             className="md:w-7/12 flex flex-col gap-4"
           >
@@ -125,13 +153,30 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="group flex items-center justify-center gap-2 bg-emerald-500 text-black font-bold uppercase tracking-wider py-4 rounded-lg hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/20 hover:-translate-y-1 w-full sm:w-auto self-end px-10"
+              disabled={status === "loading" || status === "success"}
+              className="group flex items-center justify-center gap-2 bg-emerald-500 text-black font-bold uppercase tracking-wider py-4 rounded-lg hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/20 hover:-translate-y-1 w-full sm:w-auto self-end px-10 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
             >
-              <span>Send Message</span>
-              <Send
-                size={18}
-                className="group-hover:translate-x-1 transition-transform"
-              />
+              {status === "idle" && (
+                <>
+                  <span>Send Message</span>
+                  <Send
+                    size={18}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                </>
+              )}
+              {status === "loading" && (
+                <>
+                  <span>Sending...</span>
+                  <Loader2 size={18} className="animate-spin" />
+                </>
+              )}
+              {status === "success" && (
+                <>
+                  <span>Sent!</span>
+                  <CheckCircle2 size={18} />
+                </>
+              )}
             </button>
           </motion.form>
         </div>
