@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
-@layer base {
-  body {
-    @apply bg-slate-950 text-slate-300 antialiased selection:bg-emerald-500/30 selection:text-emerald-200;
-  }
+/* Tells Tailwind v4 to trigger dark mode when the .dark class is present */
+@custom-variant dark (&:is(.dark *));
 
+@layer base {
+  /* You can remove the body background colors from here since we moved them to layout.js */
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply text-slate-100 font-bold tracking-tight;
+    @apply text-slate-900 dark:text-slate-100 font-bold tracking-tight;
   }
 }
