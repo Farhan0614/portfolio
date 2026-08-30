@@ -2,25 +2,16 @@
 
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import { handleScroll } from "../_util/scroll";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 export default function Navbar() {
-  // Custom function to handle smooth scrolling without altering the URL
-  const handleScroll = (e, targetId) => {
-    e.preventDefault(); // Prevents the default anchor link behavior
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      // Calculate position, taking the 80px fixed navbar height into account
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - 80;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  };
-
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
   return (
     <header className="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 dark:bg-black/50 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 h-20 flex items-center justify-between">
@@ -72,6 +63,10 @@ export default function Navbar() {
           <ThemeToggle />
         </div>
       </div>
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 h-[2px] bg-emerald-500 origin-left"
+        style={{ scaleX }}
+      />
     </header>
   );
 }

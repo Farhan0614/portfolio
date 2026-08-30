@@ -85,3 +85,13 @@
     opacity: 0;
   }
 }
+/* Custom Text Selection Color */
+::selection {
+  background-color: rgba(16, 185, 129, 0.3); /* Emerald-500 with 30% opacity */
+  color: inherit;
+}
+
+::-moz-selection {
+  background-color: rgba(16, 185, 129, 0.3);
+  color: inherit;
+}

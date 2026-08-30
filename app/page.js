@@ -5,6 +5,7 @@ import Contact from "./_components/Contact";
 import Footer from "./_components/Footer";
 import GridBackground from "./_components/GridBackground"; // <-- Import it
 import Services from "./_components/Services";
+import GithubStats from "./_components/GithubStats";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <GithubStats />
       <Projects />
       <Contact />
       <Footer />

@@ -19,23 +19,20 @@ export default function Contact() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
-  // Our custom submit handler
-  // Our custom submit handler
-  async function handleAction(formData) {
-    setStatus("loading");
+  // UPDATED: Changed to standard onSubmit handler for instant UI updates
+  async function handleSubmit(e) {
+    e.preventDefault(); // Prevent default browser refresh
+    setStatus("loading"); // Triggers the spinner instantly
 
-    // We run the email function AND a forced 1-second delay at the same time
-    const [result] = await Promise.all([
-      sendEmail(formData),
-      new Promise((resolve) => setTimeout(resolve, 1000)), // Force a 1-second wait
-    ]);
+    const formData = new FormData(e.currentTarget);
+    const result = await sendEmail(formData); // Waits only for actual network time
 
     if (result?.error) {
       setStatus("error");
       alert(result.error);
     } else {
       setStatus("success");
-      document.getElementById("contact-form").reset();
+      e.target.reset(); // Clear the form
 
       // Reset the button after 3 seconds
       setTimeout(() => setStatus("idle"), 3000);
@@ -96,7 +93,7 @@ export default function Contact() {
           {/* RIGHT SIDE: The Form */}
           <motion.form
             id="contact-form"
-            action={handleAction} // We pass our Server Action here!
+            onSubmit={handleSubmit} // UPDATED: Changed from action to onSubmit
             variants={itemVariants}
             className="md:w-7/12 flex flex-col gap-4"
           >
@@ -154,7 +151,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "loading" || status === "success"}
-              className="group flex items-center justify-center gap-2 bg-emerald-500 text-black font-bold uppercase tracking-wider py-4 rounded-lg hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/20 hover:-translate-y-1 w-full sm:w-auto self-end px-10 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
+              className="group flex items-center cursor-pointer justify-center gap-2 bg-emerald-500 text-black font-bold uppercase tracking-wider py-4 rounded-lg hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/20 hover:-translate-y-1 w-full sm:w-auto self-end px-10 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
             >
               {status === "idle" && (
                 <>
