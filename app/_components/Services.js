@@ -67,7 +67,7 @@ export default function Services() {
             <motion.div
               key={service.id}
               variants={cardVariants}
-              className="group relative p-8 md:p-10 bg-white dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-xl shadow-slate-200/50 dark:shadow-none overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500/50"
+              className="group relative p-8 md:p-10 bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md rounded-2xl border border-slate-200/50 dark:border-neutral-800/50 shadow-xl shadow-slate-200/20 dark:shadow-none overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500/50"
             >
               {/* Subtle background glow on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-emerald-500/0 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

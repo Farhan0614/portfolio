@@ -62,7 +62,7 @@ export default async function GithubStats() {
 
   return (
     <section className="py-12 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto w-full">
-      <div className="bg-white dark:bg-neutral-900 rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-neutral-800 shadow-xl shadow-slate-200/50 dark:shadow-none relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10 transition-colors duration-300">
+      <div className="bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-slate-200/50 dark:border-neutral-800/50 shadow-xl shadow-slate-200/20 dark:shadow-none relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10 transition-colors duration-300">
         {/* Background Accent */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] -z-10"></div>
 

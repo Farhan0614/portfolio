@@ -49,7 +49,7 @@ export default function Contact() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="bg-white dark:bg-neutral-900 rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-neutral-800 shadow-2xl shadow-slate-200/50 dark:shadow-none relative overflow-hidden"
+        className="bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-slate-200/50 dark:border-neutral-800/50 shadow-2xl shadow-slate-200/20 dark:shadow-none relative overflow-hidden"
       >
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] -z-10"></div>
 

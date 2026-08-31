@@ -99,7 +99,7 @@ export default function About() {
             <motion.div
               key={category}
               variants={childVariants}
-              className="p-8 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-xl shadow-slate-200/50 dark:shadow-none hover:-translate-y-2 transition-transform duration-300 group"
+              className="p-8 rounded-2xl bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md border border-slate-200/50 dark:border-neutral-800/50 shadow-xl shadow-slate-200/20 dark:shadow-none hover:-translate-y-2 transition-transform duration-300 group"
             >
               {/* Dynamic Icon */}
               {getSkillIcon(category)}

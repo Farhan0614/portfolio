@@ -71,7 +71,7 @@ export default function Projects() {
           <motion.article
             key={project.id}
             variants={cardVariants}
-            className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-neutral-800 shadow-xl shadow-slate-200/50 dark:shadow-none hover:border-emerald-500/50 transition-all duration-300"
+            className="group flex flex-col bg-white/70 dark:bg-neutral-900/50 backdrop-blur-md rounded-2xl overflow-hidden border border-slate-200/50 dark:border-neutral-800/50 shadow-xl shadow-slate-200/20 dark:shadow-none hover:border-emerald-500/50 transition-all duration-300"
           >
             {/* Image Banner Container */}
             <div className="relative w-full h-64 md:h-72 overflow-hidden bg-slate-900">
