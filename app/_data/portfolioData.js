@@ -26,35 +26,37 @@ export const projects = [
     id: "spendsignature",
     title: "SpendSignature",
     description:
-      "A comprehensive web-based financial management platform featuring expense tracking, subscription control, and automated PDF reporting. Engineered a machine learning backend to provide financial forecasting and anomaly detection.",
+      "A comprehensive web-based financial management platform featuring expense tracking, subscription control, and automated PDF reporting. Engineered a machine learning backend to provide financial forecasting(min 2-3 month data required) and anomaly detection.",
     techStack: [
       "React",
       "Tailwind CSS",
       "Supabase",
       "Flask",
       "scikit-learn",
+      "Forest Isolation",
       "Python",
     ],
     image: "/img/spendsignature-mockup.png", // We will add placeholders later
-    liveLink: "https://your-live-link.com",
-    githubLink: "https://github.com/yourusername/spendsignature",
+    liveLink: "https://spendsignature.vercel.app/",
+    githubLink: "https://github.com/Farhan0614/SpendSignature",
   },
   {
     id: "natours",
     title: "Natours Architecture",
     description:
-      "A decoupled, full-stack tour booking application. Built a robust Express backend with custom error handling, JWT cookie-based authentication, and a modern Next.js server-rendered frontend.",
+      "A decoupled, full-stack tour-booking application with a Next.js server-rendered frontend and a custom Node.js/Express + MongoDB backend, featuring complete JWT cookie-based auth, REST APIs for tours/users/reviews/bookings, Stripe integration, and file uploads.",
     techStack: [
       "Next.js",
       "Node.js",
       "Express.js",
       "MongoDB",
       "Mongoose",
-      "JWT",
+      "JWT Auth",
     ],
-    image: "/img/natours-mockup.png",
-    liveLink: "https://your-live-link.com",
-    githubLink: "https://github.com/yourusername/natours",
+    image: "/img/natours-mockup.png", // add this asset later
+    liveLink: "",
+    githubLink: "https://github.com/Farhan0614/natours-client",
+    sourceBackend: "https://github.com/Farhan0614/natours-api",
   },
 ];
 

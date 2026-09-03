@@ -75,9 +75,10 @@ export default function About() {
           >
             <p>
               My engineering philosophy goes beyond just making things work. I
-              am deeply passionate about **Software Quality
-              Engineering**—prioritizing robust architecture, strict testing
-              methodologies, and maintainable code from day one.
+              am deeply passionate about{" "}
+              <strong>Software Quality Engineering</strong>
+              —prioritizing robust architecture, strict testing methodologies,
+              and maintainable code from day one.
             </p>
           </motion.div>
           <motion.div
