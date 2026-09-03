@@ -19,22 +19,20 @@ export default function Contact() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
-  // UPDATED: Changed to standard onSubmit handler for instant UI updates
   async function handleSubmit(e) {
-    e.preventDefault(); // Prevent default browser refresh
-    setStatus("loading"); // Triggers the spinner instantly
+    e.preventDefault();
+    setStatus("loading");
 
     const formData = new FormData(e.currentTarget);
-    const result = await sendEmail(formData); // Waits only for actual network time
+    const result = await sendEmail(formData);
 
     if (result?.error) {
       setStatus("error");
       alert(result.error);
     } else {
       setStatus("success");
-      e.target.reset(); // Clear the form
+      e.target.reset();
 
-      // Reset the button after 3 seconds
       setTimeout(() => setStatus("idle"), 3000);
     }
   }
@@ -63,8 +61,8 @@ export default function Contact() {
               <div className="w-16 h-1 bg-emerald-500 rounded-full mb-6"></div>
               <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-6">
                 I am currently open to new opportunities. Whether you have a
-                question, a project idea, or just want to say hi, I'll try my
-                best to get back to you!
+                question, a project idea, or just want to say hi, I&apos;ll try
+                my best to get back to you!
               </p>
             </motion.div>
 
@@ -93,7 +91,7 @@ export default function Contact() {
           {/* RIGHT SIDE: The Form */}
           <motion.form
             id="contact-form"
-            onSubmit={handleSubmit} // UPDATED: Changed from action to onSubmit
+            onSubmit={handleSubmit}
             variants={itemVariants}
             className="md:w-7/12 flex flex-col gap-4"
           >

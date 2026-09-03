@@ -6,6 +6,7 @@ export const personalInfo = {
   github: "https://github.com/Farhan0614",
   linkedin: "https://linkedin.com/in/muhammad-farhan-web-dev",
   email: "farhanmirza0614@gmail.com",
+  cvUrl: "/cv/Muhammad_Farhan_CV.pdf",
 };
 
 export const skills = {

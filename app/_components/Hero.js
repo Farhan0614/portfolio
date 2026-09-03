@@ -73,7 +73,6 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        // Updated: flex-col for better mobile stacking, lg:gap-20 for better desktop spacing
         className="flex flex-col lg:flex-row items-center justify-between w-full gap-16 lg:gap-20 z-10"
       >
         <div className="flex-1 max-w-3xl flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -109,7 +108,6 @@ export default function Hero() {
             variants={itemVariants}
             className="flex flex-col sm:flex-row items-center gap-6"
           >
-            {/* Notice we also updated this to match the scroll handler concept if needed, though standard anchor is fine here since we don't have it in the nav */}
             <button
               onClick={(e) => handleScroll(e, "projects")}
               className="px-8 py-4 bg-emerald-500 text-black cursor-pointer font-bold rounded-lg hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-1 focus:outline-none"
@@ -146,13 +144,10 @@ export default function Hero() {
 
         <motion.div
           variants={imageVariants}
-          // Updated: Added -rotate-2 and hover:rotate-0 for the floating card effect
           className="relative group w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] shrink-0 -rotate-2 hover:rotate-0 transition-transform duration-700 ease-out"
         >
-          {/* Updated: rounded-3xl to perfectly match the image wrapper below */}
           <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-emerald-300/30 rounded-3xl blur opacity-30 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
 
-          {/* Updated: rounded-3xl for premium geometry */}
           <div className="relative w-full h-full rounded-3xl overflow-hidden border border-slate-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-2xl">
             <Image
               src="/img/profile2.jpg"

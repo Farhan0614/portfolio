@@ -4,6 +4,7 @@ import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import { handleScroll } from "../_util/scroll";
 import { motion, useScroll, useSpring } from "framer-motion";
+import { personalInfo } from "../_data/portfolioData";
 
 export default function Navbar() {
   const { scrollYProgress } = useScroll();
@@ -17,7 +18,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 h-20 flex items-center justify-between">
         {/* Left Side: Logo / Name */}
         <button
-          onClick={(e) => handleScroll(e, "hero")} // Assuming you add id="hero" to your Hero section
+          onClick={(e) => handleScroll(e, "hero")}
           className="text-xl font-extrabold tracking-tighter text-slate-900 dark:text-slate-100 hover:text-emerald-500 cursor-pointer dark:hover:text-emerald-400 transition-colors focus:outline-none"
         >
           Farhan<span className="text-emerald-500">.</span>
@@ -26,7 +27,6 @@ export default function Navbar() {
         {/* Right Side: Links & Toggle */}
         <div className="flex items-center gap-6">
           <nav className="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600 dark:text-slate-400">
-            {/* Notice we use buttons instead of Links to prevent URL changes */}
             <button
               onClick={(e) => handleScroll(e, "about")}
               className="hover:text-emerald-500 cursor-pointer transition-colors focus:outline-none"
@@ -54,6 +54,30 @@ export default function Navbar() {
             >
               Contact
             </button>
+
+            <a
+              href={personalInfo.cvUrl}
+              download="Muhammad_Farhan_CV.pdf"
+              className="hover:text-emerald-500 cursor-pointer transition-colors focus:outline-none inline-flex items-center gap-1"
+              aria-label="Download CV"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Resume
+            </a>
           </nav>
 
           {/* Vertical Divider */}

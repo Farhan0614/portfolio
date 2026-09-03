@@ -34,7 +34,6 @@ export default function About() {
   };
 
   return (
-    // The id="about" is crucial here so your Navbar links can scroll directly to it!
     <section
       id="about"
       className="py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto w-full relative"
@@ -46,7 +45,7 @@ export default function About() {
         variants={scrollVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }} // Triggers when 20% of the section is in view
+        viewport={{ once: true, amount: 0.2 }}
         className="flex flex-col lg:flex-row gap-16"
       >
         {/* LEFT SIDE: The About Narrative */}
@@ -87,9 +86,9 @@ export default function About() {
           >
             <p>
               Technology moves fast, so continuous learning is baked into my
-              daily routine. Ultimately, I believe great software isn't just
-              about writing logic; it requires clear communication, seamless
-              collaboration, and a focus on delivering real user value.
+              daily routine. Ultimately, I believe great software isn&apos;t
+              just about writing logic; it requires clear communication,
+              seamless collaboration, and a focus on delivering real user value.
             </p>
           </motion.div>
         </div>

@@ -57,7 +57,7 @@ export default async function GithubStats() {
       icon: BookOpen,
     },
     { label: "Years Coding", value: yearsActive, icon: Calendar },
-    { label: "Commits/PRs", value: "Active", icon: GitMerge }, // Hardcoded based on your Next/Node expertise
+    { label: "Commits/PRs", value: "Active", icon: GitMerge },
   ];
 
   return (
