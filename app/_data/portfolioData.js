@@ -55,7 +55,7 @@ export const projects = [
       "JWT Auth",
     ],
     image: "/img/natours-mockup.png", // add this asset later
-    liveLink: "",
+    liveLink: "https://natours-client-six.vercel.app/",
     githubLink: "https://github.com/Farhan0614/natours-client",
     sourceBackend: "https://github.com/Farhan0614/natours-api",
   },
